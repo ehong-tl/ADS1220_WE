@@ -153,8 +153,8 @@ class ADS1220_WE
         static constexpr float ADS1220_RANGE {8388607.0}; // = 2^23 - 1 as float
     
         /* Constructors */
-        ADS1220_WE(int cs, int drdy) : _spi{&SPI}, csPin{cs}, drdyPin{drdy} {}
-        ADS1220_WE(SPIClass *s, int cs, int drdy) : _spi{s}, csPin{cs}, drdyPin{drdy} {}
+        ADS1220_WE(int cs=-1, int drdy=-1) : _spi{&SPI}, csPin{cs}, drdyPin{drdy} {}
+        ADS1220_WE(SPIClass *s, int cs=-1, int drdy=-1) : _spi{s}, csPin{cs}, drdyPin{drdy} {}
             
         /* Commands */
         uint8_t init();
